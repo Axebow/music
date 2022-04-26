@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Mortend';
+    font-family: Mortend;
     src: URL('../assets/fonts/Mortend/Regular.ttf') format('truetype');
 }
 
@@ -18,7 +18,7 @@
     --light-tint: #EDF5DC;
 
     --font-sans-serif: 'Monserrat', sans-serif;
-    --font-display: 'Mortend', sans-serif;
+    --font-display: Mortend, sans-serif;
 }
 
 
