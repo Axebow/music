@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @font-face {
     font-family: Mortend;
     src: URL('../assets/fonts/Mortend-Regular.ttf') format('truetype');
@@ -18,10 +20,13 @@
     --light-tint: #EDF5DC;
     --dark-tint: #252d58;
 
-    --font-sans-serif: 'Monserrat', sans-serif;
+    --font-sans-serif: 'Montserrat', sans-serif;
     --font-display: Mortend;
 }
 
+html{
+    scroll-behavior: smooth;
+}
 
 body{
     font-family: var(--font-sans-serif);
@@ -42,7 +47,7 @@ body{
     font-family: var(--font-display);
     font-size: 28px;
     opacity: 0.90;
-    font-weight: 700;
+    font-weight: 500;
     text-transform: uppercase;
 }
 
@@ -50,8 +55,49 @@ body{
     font-family: var(--font-display);
     font-size: 20px;
     opacity: 0.80;
-    font-weight: 700;
+    font-weight: 500;
     text-transform: uppercase;
+}
+
+.txt-hero-sans{
+    font-size: 42px;
+    opacity: 0.95;
+    font-weight: 700;
+}
+
+.txt-title-sans{
+    font-size: 28px;
+    opacity: 0.90;
+    font-weight: 700;
+
+}
+
+.txt-subtitle-sans{
+    font-size: 24px;
+    opacity: 0.85;
+    font-weight: 600;
+
+}
+
+.txt-caption-sans{
+    font-size: 20px;
+    opacity: 0.80;
+    font-weight: 600;
+
+}
+
+.txt-body-sans{
+    font-size: 18px;
+    opacity: 0.80;
+    font-weight: 500;
+
+}
+
+.txt-muted-sans{
+    font-size: 13px;
+    opacity: 0.70;
+    font-weight: 400;
+
 }
 
 /* core */
@@ -110,13 +156,50 @@ section{
 .card{
     border-radius: 10px;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     cursor: pointer;
     margin: 10px;
+}
+
+.unreleased{
+    cursor: not-allowed;
+    opacity: 0.1;
 }
 
 .track{
     width: 400px;
     height: 400px;
+}
+
+.remix{
+    width: 300px;
+    height: 300px;
+}
+
+.btn{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    background: var(--gray);
+    padding: 10px;
+    box-sizing: border-box;
+    color: var(--light);
+    text-decoration: none;
+}
+
+.btn .icon-label{
+    display: none;
+    margin-left: 10px;
+}
+
+.btn:hover{
+    background-color: var(--light);
+    color: var(--dark);
 }
 
 /* layout */
@@ -135,6 +218,14 @@ section{
     grid-template-columns: 50% 50%;
 }
 
+.centered-text{
+    text-align: center;
+}
+
+.centered{
+    margin: auto;
+}
+
 /* specific */
 
 #section-1{
@@ -149,7 +240,7 @@ section{
     background-repeat: no-repeat;
 }
 
-#section-2{
+#singles-ep{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -158,8 +249,40 @@ section{
     padding: 42px 0;
 }
 
-#section-2 .txt-hero-display:first-child{
+#singles-ep .txt-hero-display:first-child{
     margin-bottom: 20px;
+}
+
+#singles-ep .centered-text{
+    width: 70%;
+    margin: 20px auto;
+}
+
+#singles-ep .btn{
+    margin: auto 10px;
+}
+
+.ep-cover{
+    margin: 0%;
+    padding: 0;
+}
+
+#section-3 #remixes, #section-3 #mashups{
+    margin: 42px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#remixes .flexer, #mashups .flexer{
+    width: fit-content;
+    justify-content: space-around;
+}
+
+#remixes .flexer .btn, #mashups .flexer .btn{
+    margin: 0 10px;
 }
 
 /* adjustment css */
@@ -174,6 +297,20 @@ section{
     flex-direction: row;
     align-items: center;
     justify-content: start;
+}
+
+.flexer-centered{
+    justify-content: center  ;
+}
+
+.line-break-70{
+    height: 70px;
+    width: 100%;
+}
+
+.line-break-50{
+    height: 50px;
+    width: 100%;
 }
 
 /* mobile */
@@ -203,10 +340,50 @@ section{
     .grid-2, .grid-3{
         grid-template-columns: 100%;
     }
+    
+    #singles-ep .centered-text{
+        width: 90%;
+    }
 
     .card{
         margin: 20px auto;
     }
+
+    .card-cover{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 220px;
+        height: 42px;
+    }
 }
 
 /* tablet */
+
+/* desktop specific */
+@media screen and (min-width: 1001px){
+    
+    .btn:hover{
+        width: fit-content;
+    }
+
+    .btn:hover .icon-label{
+        display: block;
+    }
+
+    .card-cover{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        height: 100%;
+    }
+    
+    .remix:hover .card-cover{
+        display: flex;
+        backdrop-filter: blur(10px);
+    }
+
+}
