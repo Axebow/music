@@ -1,6 +1,6 @@
 @font-face {
     font-family: Mortend;
-    src: URL('../assets/fonts/Mortend/Regular.ttf') format('truetype');
+    src: URL('../assets/fonts/Mortend-Regular.ttf') format('truetype');
 }
 
 :root{
@@ -114,8 +114,11 @@ section{
 
     #section-1 .hero-image{
         background: linear-gradient(to bottom, transparent, var(--dark)),url(../assets/astronaut.png);
-        background-position: center;
+        background-position: center !important;
         background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
