@@ -18,7 +18,7 @@
     --light-tint: #EDF5DC;
 
     --font-sans-serif: 'Monserrat', sans-serif;
-    --font-display: Mortend, sans-serif;
+    --font-display: Mortend;
 }
 
 
@@ -26,6 +26,7 @@ body{
     font-family: var(--font-sans-serif);
     background: var(--dark);
     color: #FFFFFF;
+    margin: 0;
 }
 
 .txt-hero-display{
@@ -33,6 +34,7 @@ body{
     font-size: 42px;
     opacity: 0.95;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 .txt-title-display{
@@ -40,6 +42,7 @@ body{
     font-size: 28px;
     opacity: 0.90;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 .txt-caption-display{
@@ -47,4 +50,73 @@ body{
     font-size: 20px;
     opacity: 0.80;
     font-weight: 700;
+    text-transform: uppercase;
 }
+
+/* core */
+
+.nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0 10%;
+}
+
+.navlinks{
+    padding: 0;
+}
+
+.navlinks li{
+    list-style-type: none;
+    margin: 42px 0;
+}
+
+.navlinks li a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.navlinks li a:hover{
+    color: var(--primary);
+}
+
+section{
+    margin: 0;
+    padding: 0;
+}
+
+/* specific */
+
+#section-1{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 100vh;
+}
+
+#section-1 .hero-image{
+    background: linear-gradient(to right, var(--dark), transparent),url(../assets/astronaut.png);
+    background-size: 110%;
+    background-repeat: no-repeat;
+}
+
+/* mobile */
+
+@media screen and (max-width: 1000px) {
+    #section-1{
+        grid-template-columns: 100%;
+    }
+    
+    #section-1 .nav{
+        display: none;
+    }
+
+    #section-1 .hero-image{
+        background: linear-gradient(to bottom, transparent, var(--dark)),url(../assets/astronaut.png);
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+/* tablet */
