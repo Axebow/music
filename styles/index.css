@@ -16,6 +16,7 @@
     --pink: #FA4D6C;
     --turquoise: #11D5E3;
     --light-tint: #EDF5DC;
+    --dark-tint: #252d58;
 
     --font-sans-serif: 'Monserrat', sans-serif;
     --font-display: Mortend;
@@ -87,6 +88,53 @@ section{
     padding: 0;
 }
 
+.icon{
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: var(--secondary);
+    color: black;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon:hover{
+    background-color: var(--dark-tint);
+    color: white;
+}
+
+.card{
+    border-radius: 10px;
+    background-size: cover;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.track{
+    width: 400px;
+    height: 400px;
+}
+
+/* layout */
+
+.grid{
+    display: grid;
+    place-content: center;
+    margin: auto;
+}
+
+.grid-3{
+    grid-template-columns: 33.33% 33.34% 33.33%;
+}
+
+.grid-2{
+    grid-template-columns: 50% 50%;
+}
+
 /* specific */
 
 #section-1{
@@ -96,9 +144,36 @@ section{
 }
 
 #section-1 .hero-image{
-    background: linear-gradient(to right, var(--dark), transparent),url(../assets/astronaut.png);
+    background: linear-gradient(to right, var(--dark) 10%, transparent),url(../assets/astronaut.png);
     background-size: 110%;
     background-repeat: no-repeat;
+}
+
+#section-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 42px 0;
+}
+
+#section-2 .txt-hero-display:first-child{
+    margin-bottom: 20px;
+}
+
+/* adjustment css */
+
+.mobile-only{
+    display: none;
+}
+
+.flexer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
 }
 
 /* mobile */
@@ -119,6 +194,18 @@ section{
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .mobile-only{
+        display: block;
+    }
+
+    .grid-2, .grid-3{
+        grid-template-columns: 100%;
+    }
+
+    .card{
+        margin: 20px auto;
     }
 }
 
