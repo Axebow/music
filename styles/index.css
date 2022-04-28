@@ -210,6 +210,10 @@ section{
     margin: auto;
 }
 
+.grid-4{
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
 .grid-3{
     grid-template-columns: 33.33% 33.34% 33.33%;
 }
@@ -267,7 +271,7 @@ section{
     padding: 0;
 }
 
-#section-3 #remixes, #section-3 #mashups{
+#section-3 #remixes, #section-3 #mashups, #section-3 #playlists{
     margin: 42px 0;
     display: flex;
     flex-direction: column;
@@ -276,13 +280,26 @@ section{
     width: 100%;
 }
 
-#remixes .flexer, #mashups .flexer{
+#remixes .flexer, #mashups .flexer, #playlists .flexer{
     width: fit-content;
     justify-content: space-around;
 }
 
-#remixes .flexer .btn, #mashups .flexer .btn{
+#remixes .flexer .btn, #mashups .flexer .btn, #playlists .flexer .btn{
     margin: 0 10px;
+}
+
+#footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 42px 0;
+}
+
+#footer .flexer{
+    justify-content: center;
 }
 
 /* adjustment css */
@@ -313,6 +330,13 @@ section{
     width: 100%;
 }
 
+.horizontal-line{
+    width: 80%;
+    background-color: var(--light);
+    height: 1px;
+    margin-bottom: 50px;
+}
+
 /* mobile */
 
 @media screen and (max-width: 1000px) {
@@ -337,7 +361,7 @@ section{
         display: block;
     }
 
-    .grid-2, .grid-3{
+    .grid-2, .grid-3, .grid-4{
         grid-template-columns: 100%;
     }
     
@@ -357,6 +381,45 @@ section{
         margin-top: 220px;
         height: 42px;
     }
+
+    .hero-mobile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .scroll-icon{
+        position: absolute;
+        bottom: 42px;
+        color: inherit;
+    }
+
+    #down-caret{
+        animation: carethint 5s ease infinite;
+    }
+
+    #down-caret:focus{
+        color: var(--slightly-slate);
+    }
+
+    #down-caret:active{
+        color: var(--secondary);
+    }
+
+    @keyframes carethint {
+        10% {
+          transform: rotateY(0deg);
+          opacity: 0.9;
+        }
+      
+        40% {
+          transform: rotateY(180deg);
+          opacity: 0.7;
+          color: var(--slightly-slate);
+        }
+    }
+    
 }
 
 /* tablet */
